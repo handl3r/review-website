@@ -1,0 +1,26 @@
+version: '2.2'
+services:
+  web:
+    container_name: project1_rails
+    build: .
+    tty: true
+    volumes:
+      - .:/my_app
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_HOST: mysql
+      DATABASE_USER_NAME: root
+      DATABASE_PASSWORD: root
+
+  mysql:
+    image: mysql:5.7
+    container_name: projet1_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - mysql:/var/lib/mysql
+
+volumes:
+  mysql:
+    driver: local
