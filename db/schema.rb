@@ -10,21 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_10_083716) do
+ActiveRecord::Schema.define(version: 2019_07_10_150852) do
 
   create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "place_id"
+    t.bigint "user_id"
+    t.bigint "place_id"
     t.integer "type"
     t.string "path"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["place_id", "created_at"], name: "index_photos_on_place_id_and_created_at"
+    t.index ["place_id"], name: "index_photos_on_place_id"
+    t.index ["user_id"], name: "index_photos_on_user_id"
   end
 
   create_table "places", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "company_id"
+    t.bigint "user_id"
     t.string "address"
-    t.integer "service_id"
+    t.bigint "service_id"
     t.integer "numberRatings"
     t.float "mediumRating"
     t.string "phoneNumber"
@@ -33,15 +36,21 @@ ActiveRecord::Schema.define(version: 2019_07_10_083716) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["service_id"], name: "index_places_on_service_id"
+    t.index ["user_id", "created_at"], name: "index_places_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_places_on_user_id"
   end
 
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "rater_id"
-    t.integer "place_id"
+    t.bigint "user_id"
+    t.bigint "place_id"
     t.integer "rating"
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["place_id"], name: "index_reviews_on_place_id"
+    t.index ["user_id", "created_at"], name: "index_reviews_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "services", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -58,9 +67,14 @@ ActiveRecord::Schema.define(version: 2019_07_10_083716) do
     t.string "phoneNumber"
     t.string "email"
     t.text "description"
-    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "photos", "places"
+  add_foreign_key "photos", "users"
+  add_foreign_key "places", "services"
+  add_foreign_key "places", "users"
+  add_foreign_key "reviews", "places"
+  add_foreign_key "reviews", "users"
 end

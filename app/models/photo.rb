@@ -1,11 +1,7 @@
-# frozen_string_literal: true
-
 class Photo < ApplicationRecord
-
-  validates :type, maximum: 2, uniqueness: true
-  validates :path, uniqueness: true, presence: true
-  
-  belongs_to :place
   belongs_to :user
+  belongs_to :place
 
+  validates :type, uniqueness: true
+  validates :path, uniqueness: true, presence: true
 end

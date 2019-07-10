@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  IDUser: 1
-  IDPlace: 1
+  user_id: one
+  place_id: one
   type: 1
   path: MyString
 
 two:
-  IDUser: 1
-  IDPlace: 1
+  user_id: two
+  place_id: two
   type: 1
   path: MyString

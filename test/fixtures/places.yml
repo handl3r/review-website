@@ -1,23 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  IDCompany: 1
+  user_id: one
   address: MyString
-  typeService: 1
+  service_id: one
   numberRatings: 1
   mediumRating: 1.5
   phoneNumber: MyString
-  timeOpen: 2019-07-10 08:29:00
-  timeClose: 2019-07-10 08:29:00
+  timeOpen: 2019-07-10 15:04:00
+  timeClose: 2019-07-10 15:04:00
   description: MyText
 
 two:
-  IDCompany: 1
+  user_id: two
   address: MyString
-  typeService: 1
+  service_id: two
   numberRatings: 1
   mediumRating: 1.5
   phoneNumber: MyString
-  timeOpen: 2019-07-10 08:29:00
-  timeClose: 2019-07-10 08:29:00
+  timeOpen: 2019-07-10 15:04:00
+  timeClose: 2019-07-10 15:04:00
   description: MyText

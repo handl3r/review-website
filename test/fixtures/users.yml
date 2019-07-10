@@ -8,7 +8,6 @@ one:
   phoneNumber: MyString
   email: MyString
   description: MyText
-  password_digest: MyString
 
 two:
   type: 1
@@ -18,4 +17,3 @@ two:
   phoneNumber: MyString
   email: MyString
   description: MyText
-  password_digest: MyString

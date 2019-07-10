@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class CreatePlaces < ActiveRecord::Migration[5.2]
   def change
     create_table :places do |t|
-      t.integer :company_id
+      t.references :user, foreign_key: true, type: :bigint
       t.string :address
-      t.integer :service_id
+      t.references :service, foreign_key: true, type: :bigint
       t.integer :numberRatings
       t.float :mediumRating
       t.string :phoneNumber
@@ -13,5 +15,6 @@ class CreatePlaces < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+    add_index :places, %i[user_id created_at]
   end
 end
