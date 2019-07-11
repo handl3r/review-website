@@ -3,7 +3,10 @@ class Place < ApplicationRecord
   belongs_to :service
   has_many :photos
   has_many :reviews
-  has_and_belongs_to_many :services
+  # For use case when want to find places by service. so use has_and_belongs_to_many
+  # has_and_belongs_to_many :services
+  # But if just want to find services of a place so use has many, belongs_to
+  has_many :services
 
   validates :address, presence: true
   validates :numberRatings, presence: true
