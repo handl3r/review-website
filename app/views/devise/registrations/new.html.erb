@@ -1,31 +1,41 @@
-<h2>Sign up</h2>
+<head>
+  <title>Sign_up Page</title>
+</head>
+
+<body>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {id: 'form'}) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-  <div class="field">
+  <div class="input">
     <%= f.label :email %><br/>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "textfield",
+                      placeholder: "Email" %>
   </div>
 
-  <div class="field">
+  <div class="input">
     <%= f.label :password %>
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br/>
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", class: "textfield",
+                         placeholder: "Password" %>
   </div>
 
-  <div class="field">
+  <div class="input">
     <%= f.label :password_confirmation %><br/>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "textfield",
+                         placeholder: "Confirm" %>
   </div>
-  <div class="field">
+  <div class="input">
     <%= f.label :role %><br/>
-    <%= f.select :role, User.roles.keys, {}, :id => 'form'  %>
+    <%= f.select :role, User.roles.keys, {}, :id => 'role'  %>
   </div>
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="input">
+    <%= f.submit "Sign up", id: "submit_button" %>
   </div>
 <% end %>
+<div class="shared_link">
+  <%= render "devise/shared/links" %>
+</div>
 
-<%= render "devise/shared/links" %>
+</body>

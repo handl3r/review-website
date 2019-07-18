@@ -26,6 +26,27 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :address %>
+    <%= f.text_area :address %>
+  </div>
+  <div class="field">
+    <%= f.label :website %>
+    <%= f.text_field :website %>
+  </div>
+  <div class="field">
+    <%= f.label :phoneNumber %>
+    <%= f.telephone_field :phoneNumber %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
 
   <div class="actions">
     <%= f.submit "Update" %>

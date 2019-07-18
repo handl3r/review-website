@@ -2,8 +2,11 @@ FROM ruby:2.6.3
 # Information about author
 LABEL author.name="ThaiBuiXuan" \
   author.email="thaibuixuan34@gmail.com"
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
+        && apt-get install -y nodejs
 RUN apt-get update && \
-  apt-get install -y nodejs nano
+  apt-get install nano
+
 
 ENV APP_PATH /my_app
 WORKDIR $APP_PATH

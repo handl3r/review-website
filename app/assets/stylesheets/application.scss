@@ -1,0 +1,40 @@
+
+@import "bootstrap";
+
+//css for header
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+.ul_bar {
+  float: right;
+}
+
+#header_logo {
+  width: 100px;
+  height: 100px;
+}
+
+//css for body
+
+body {
+  padding-top: 50px;
+}
+
+//css for footer
+.footer_logo {
+  width: 50px;
+  height: 50px;
+}
+
+
+
+
