@@ -2,25 +2,40 @@
 @import "bootstrap";
 
 //css for header
-@mixin box_sizing {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
-}
-.ul_bar {
-  float: right;
-}
+//@mixin box_sizing {
+//  -moz-box-sizing: border-box;
+//  -webkit-box-sizing: border-box;
+//  box-sizing: border-box;
+//}
+//.debug_dump {
+//  clear: both;
+//  float: left;
+//  width: 100%;
+//  margin-top: 45px;
+//  @include box_sizing;
+//}
+//.ul_bar {
+//  float: right;
+//}
 
 #header_logo {
   width: 100px;
   height: 100px;
+}
+#navigation {
+  background-color: #f64c14;
+}
+#text_logo{
+  margin-left: 10px;
+  color: black;
+  float: left;
+  font-size: 1.7em;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: -1px;
+  margin-right: 10px;
+  padding-top: 9px;
+  text-transform: uppercase;
 }
 
 //css for body
@@ -28,11 +43,35 @@
 body {
   padding-top: 50px;
 }
-
+.main_body {
+  padding-top: 50px;
+}
+.shared_link {
+  padding-top: 15px;
+  margin-left: 3%;
+  text-decoration: underline;
+}
+.topic {
+  text-align: center;
+  font-weight: bold;
+}
+.link_unhappy {
+  padding-top: 10px;
+}
 //css for footer
 .footer_logo {
   width: 50px;
   height: 50px;
+}
+#end_part_footer{
+  padding-top: 30px;
+}
+#description{
+  text-align: center;
+}
+#time_fife {
+  text-align: center;
+  font-weight: bold;
 }
 
 
