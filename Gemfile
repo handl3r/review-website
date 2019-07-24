@@ -8,6 +8,12 @@ gem 'rails', '~> 5.2.3'
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Devise for authenticate
 gem 'devise'
+
+# Use active-admin
+gem 'activeadmin'
+gem 'cancancan'
+gem 'draper'
+gem 'pundit'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
