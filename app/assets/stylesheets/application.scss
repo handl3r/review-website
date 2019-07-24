@@ -40,12 +40,10 @@
 
 //css for body
 
-body {
-  padding-top: 50px;
-}
 .main_body {
   padding-top: 50px;
 }
+
 .shared_link {
   padding-top: 15px;
   margin-left: 3%;
@@ -58,6 +56,19 @@ body {
 .link_unhappy {
   padding-top: 10px;
 }
+
+// css for show page user
+//.inf-content{
+//  border:1px solid #DDDDDD;
+//  -webkit-border-radius:10px;
+//  -moz-border-radius:10px;
+//  border-radius:10px;
+//  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
+//}
+.title-profile-card {
+  text-align: center;
+}
+
 //css for footer
 .footer_logo {
   width: 50px;

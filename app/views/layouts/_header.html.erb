@@ -1,8 +1,8 @@
 <header>
 
-  <div class="container">
+  <div class="box_header">
 
-    <nav class="nav navbar navbar-expand navbar-light" id="navigation">
+    <nav class="nav navbar navbar-expand navbar-light nav-fill w-100" id="navigation" >
 
       <%= link_to image_tag("logo.png", id: "header_logo"), root_path %>
       <%= link_to "ReviewPlaces", root_path, id: "text_logo" %>
@@ -23,6 +23,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <%= link_to "Home", root_path, class: 'dropdown-item' %>
+                <%= link_to "Profile", user_path(current_user), class: 'dropdown-item' %>
                 <%= link_to "Settings", edit_user_registration_path(current_user), class: 'dropdown-item' %>
                 <div class="dropdown-divider"></div>
                 <%= link_to "Sign out", destroy_user_session_path, class: 'dropdown-item', method: :delete %>

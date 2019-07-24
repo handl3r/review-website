@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-  form title: 'Make new title' do |f|
+  form title: 'New User' do |f|
     f.semantic_errors *f.object.errors.keys
     inputs 'User' do
       input :name
