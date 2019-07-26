@@ -11,6 +11,8 @@ gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Devise for authenticate
 gem 'devise'
 
+# Use game faker for seed data
+gem 'faker'
 # Use gem pry for debug
 gem 'pry-rails', group: :development
 
