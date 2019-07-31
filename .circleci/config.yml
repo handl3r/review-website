@@ -4,6 +4,14 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.6.3-node-browsers
+        environment:
+          DATABASE_HOST: mysql
+          DATABASE_USER_NAME: root
+          DATABASE_PASSWORD: root
+      - image: mysql:5.7
+        environment:
+          MYSQL_ROOT_PASSWORD: root
+
 
     steps:
       - checkout
@@ -25,8 +33,8 @@ jobs:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
-      - run: bundle exec rake db:create
-      - run: bundle exec rake db:schema:load
+      - run: bundle exec rails db:create
+      - run: bundle exec rails db:schema:load
 
       # run tests!
       - run:
@@ -37,10 +45,10 @@ jobs:
               circleci tests split --split-by=timings)"
 
             bundle exec rspec \
-              --format progress \
+              --format mysql \
               --format RspecJunitFormatter \
               --out /tmp/test-results/rspec.xml \
-              --format progress \
+              --format mysql \
               $TEST_FILES
 
       # collect reports
