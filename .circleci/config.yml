@@ -43,13 +43,13 @@ jobs:
           command: |
             mkdir /tmp/test-results
             TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
-              circleci tests split --split-by=timings)"
+              circleci tests split --split-by=timings --timings-type=classname)"
 
             bundle exec rspec \
-              --format mysql \
+              --profile 10 \
               --format RspecJunitFormatter \
               --out /tmp/test-results/rspec.xml \
-              --format mysql \
+              --format progress \
               $TEST_FILES
 
       # collect reports
