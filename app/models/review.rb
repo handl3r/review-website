@@ -1,9 +1,12 @@
+# frozen_string_literal: true
+
 class Review < ApplicationRecord
   belongs_to :user
   belongs_to :place
 
   validates :rating, presence: true
-  validates :comment, allow_blank: true, length: {maximum: 200}
-  validates :user_id, uniqueness: {scope: :place_id, message: "one user connot review a place more than 2 times"}
+  validates :comment, presence: true
+  message = 'one user cannot review a place more than 1 times'
+  validates :user_id, uniqueness: { scope: :place_id, message: message }
 
 end

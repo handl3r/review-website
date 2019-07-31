@@ -14,7 +14,7 @@ ActiveAdmin.register User do
     end
     actions
   end
-  permit_params :role, :name, :address, :website, :phoneNumber, :email, :description,
-                :password, :password_confirmation
-  
+  permit_params :role, :name, :address, :website, :phoneNumber, :email,
+                :description, :password, :password_confirmation
+
 end

@@ -13,6 +13,7 @@ services:
       DATABASE_USER_NAME: root
       DATABASE_PASSWORD: root
 
+
   mysql:
     image: mysql:5.7
     container_name: projet1_mysql
