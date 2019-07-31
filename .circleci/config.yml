@@ -45,6 +45,8 @@ jobs:
             TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
               circleci tests split --split-by=timings --timings-type=classname)"
 
+            rails db:seed RAILS_ENV=test
+            
             bundle exec rspec --format progress \
               --format RspecJunitFormatter \
               --out /tmp/test-results/rspec.xml \
