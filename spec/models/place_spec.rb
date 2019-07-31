@@ -3,7 +3,11 @@
 require 'rails_helper'
 
 RSpec.describe Place, type: :model do
-  common_data = { user_id: 1, address: 'xxx', service_id: 1, numberRatings: 0,
+  firstUser = User.first
+  firstService = Service.first
+  common_data = { user_id: firstUser.id, address: 'xxx',
+                  service_id: firstService.id,
+                  numberRatings: 0,
                   mediumRating: 0, phoneNumber: '000-000-0000',
                   description: 't' * 20 }
   context 'test validates' do
@@ -31,9 +35,10 @@ RSpec.describe Place, type: :model do
       place = Place.new(common_data.merge(description: 't' * 19)).save
       expect(place).to eq(false)
     end
-    it 'ensures address presence' do
+    it 'ensures success' do
       place = Place.new(common_data).save
       expect(place).to eq(true)
+
     end
   end
 end

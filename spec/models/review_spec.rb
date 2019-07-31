@@ -4,7 +4,10 @@ require 'rails_helper'
 
 RSpec.describe Review, type: :model do
   context 'test validates' do
-    common_data = { user_id: 1, place_id: 1, rating: 0, comment: 'w' }
+    firstUser = User.first
+    firstPlace = Place.first
+    common_data = { user_id: firstUser.id, place_id: firstPlace.id, rating: 0,
+                    comment: 'w' }
     it 'ensures rating presence' do
       review = Review.new(common_data.merge(rating: nil)).save
       expect(review).to eq(false)
