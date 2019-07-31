@@ -47,7 +47,7 @@ jobs:
 
             bundle exec rspec \
               --profile 10 \
-              --format RspecJunitFormatter \
+              -r rspec_junit_formatter --format RspecJunitFormatter \
               --out /tmp/test-results/rspec.xml \
               --format progress \
               $TEST_FILES
