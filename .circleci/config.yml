@@ -5,9 +5,11 @@ jobs:
     docker:
       - image: circleci/ruby:2.6.3-node-browsers
         environment:
+          DATABASE_HOST: mysql
           DATABASE_USER_NAME: root
           DATABASE_PASSWORD: root
       - image: mysql:5.7
+        name: mysql
         environment:
           MYSQL_ROOT_PASSWORD: root
 
