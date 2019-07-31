@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Place, type: :model do
-  common_data = {user_id: 1, address: 'xxx', service_id: 1,numberRatings: 0,
-                  mediumRating: 0, phoneNumber: '000-000-0000', description: 't'*20}
+  common_data = { user_id: 1, address: 'xxx', service_id: 1, numberRatings: 0,
+                  mediumRating: 0, phoneNumber: '000-000-0000',
+                  description: 't' * 20 }
   context 'test validates' do
     it 'ensures address presence' do
       place = Place.new(common_data.merge(address: nil)).save
@@ -25,7 +28,7 @@ RSpec.describe Place, type: :model do
       expect(place).to eq(false)
     end
     it 'ensures description must have minimum length 20' do
-      place = Place.new(common_data.merge(description: 't'*19)).save
+      place = Place.new(common_data.merge(description: 't' * 19)).save
       expect(place).to eq(false)
     end
     it 'ensures address presence' do
@@ -33,5 +36,4 @@ RSpec.describe Place, type: :model do
       expect(place).to eq(true)
     end
   end
-
 end

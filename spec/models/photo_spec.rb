@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Photo, type: :model do
@@ -8,7 +10,8 @@ RSpec.describe Photo, type: :model do
     end
     it 'ensures path uniqueness' do
       photo1 = Photo.first
-      photo = Photo.new(user_id: 1, place_id: nil, photo_type: 'Avatar', path: photo1.path).save
+      photo = Photo.new(user_id: 1, place_id: nil, photo_type: 'Avatar',
+                        path: photo1.path).save
       expect(photo).to eq(false)
     end
   end

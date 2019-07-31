@@ -3,8 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  common_data = {password: '111111',
-                 password_confirmation: '111111'}
+  common_data = { password: '111111',
+                  password_confirmation: '111111' }
   context 'validates tests' do
     it 'ensures role is presence' do
       user = User.new(common_data.merge(email: 'test@gmail.com')).save
@@ -50,6 +50,5 @@ RSpec.describe User, type: :model do
                       password_confirmation: '111111').save
       expect(user).to eq(true)
     end
-
   end
 end

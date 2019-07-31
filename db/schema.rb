@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_07_24_025922) do
 
-  create_table "active_admin_complace = Place.new(user_id: 1000, address: 'asda', service_id: 5, numberRatings: 100, mediumRating: 20, phoneNumber: '222-233-3333', description: 't'*21)ments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
     t.string "resource_type"
