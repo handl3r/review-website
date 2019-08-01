@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00ecaabe-af57-48c0-a597-ae1f2278da48" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deployment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deployment.sh" afterDir="false" />
     </list>
@@ -197,7 +196,7 @@
       <workItem from="1564156857179" duration="5336000" />
       <workItem from="1564538926303" duration="23451000" />
       <workItem from="1564626849807" duration="8256000" />
-      <workItem from="1564639927649" duration="6375000" />
+      <workItem from="1564639927649" duration="6659000" />
     </task>
     <servers />
   </component>
