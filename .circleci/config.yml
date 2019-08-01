@@ -1,4 +1,3 @@
-
 version: 2
 jobs:
   build:
@@ -63,11 +62,10 @@ jobs:
           - at: ~/www/Project1_test
       - add_ssh_keys:
           fingerprints:
-            - "0d:44:65:cd:f8:33:c5:f9:76:8c:40:d9:0b:87:3a:2f"
+            - "65:09:ac:40:df:ec:0f:85:6e:c9:11:c7:db:2b:9f:5d"
       - run:
           command: |
             ssh SSH_USER@SSH_HOST "bash -x ~/www/deployment.sh"
-
 workflows:
   version: 2
   build-and-deploy:
