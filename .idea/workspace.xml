@@ -35,11 +35,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="25" />
-    <option name="width" value="1366" />
-    <option name="height" value="743" />
-  </component>
   <component name="ProjectId" id="1OnwnsrNUwKbpsIlvi9pyLmcGBh" />
   <component name="PropertiesComponent">
     <property name="Ruby.ViewRefParam.DefaultExtension" value="html.erb" />
@@ -200,7 +195,8 @@
       <workItem from="1564106469796" duration="26154000" />
       <workItem from="1564156857179" duration="5336000" />
       <workItem from="1564538926303" duration="23451000" />
-      <workItem from="1564626849807" duration="6821000" />
+      <workItem from="1564626849807" duration="8256000" />
+      <workItem from="1564639927649" duration="587000" />
     </task>
     <servers />
   </component>
@@ -215,7 +211,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
