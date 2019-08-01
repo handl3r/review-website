@@ -16,12 +16,9 @@ jobs:
 
     steps:
       - checkout
-
-      # Download and cache dependencies
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "Gemfile.lock" }}
-            # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
       - run:
@@ -59,3 +56,23 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
+  deploy:
+    machine:
+      enabled: true
+    steps:
+      - attach_workspace:
+          - at: ~/www/Project1
+      - add_ssh_keys:
+          fingerprints:
+            - "0d:44:65:cd:f8:33:c5:f9:76:8c:40:d9:0b:87:3a:2f"
+      - checkout
+      - run:
+          command: |
+            ssh SSH_USER@SSH_HOST "bash -x ~/www/deployment.sh"
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - deploy
+      # - test
