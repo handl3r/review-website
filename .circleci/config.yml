@@ -1,5 +1,5 @@
 
-version: 2
+version: 2.1
 jobs:
   build:
     docker:
@@ -70,7 +70,7 @@ jobs:
             ssh SSH_USER@SSH_HOST "bash -x ~/www/deployment.sh"
 
 workflows:
-  version: 2
+  version: 2.1
   build-and-deploy:
     jobs:
       - build
