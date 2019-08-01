@@ -11,8 +11,6 @@ jobs:
         name: mysql
         environment:
           MYSQL_ROOT_PASSWORD: root
-
-
     steps:
       - checkout
       - restore_cache:
@@ -58,8 +56,6 @@ jobs:
     machine:
       enabled: true
     steps:
-      - attach_workspace:
-          - at: ~/www/Project1_test
       - add_ssh_keys:
           fingerprints:
             - "65:09:ac:40:df:ec:0f:85:6e:c9:11:c7:db:2b:9f:5d"
