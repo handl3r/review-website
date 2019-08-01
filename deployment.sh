@@ -1,4 +1,6 @@
 #!/bin/sh
 set -eu
-docker-compose up  --build -d
+pwd
+docker-compose build
+docker-compose up
 docker-compose exec web rails db:migrate

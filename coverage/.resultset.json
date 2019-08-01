@@ -1,15 +1,19 @@
 {
   "RSpec": {
     "coverage": {
-      "/my_app/spec/controllers/users_controller_spec.rb": [
+      "/my_app/spec/models/photo_spec.rb": [
+        null,
+        null,
         1,
         null,
         1,
         1,
         1,
         1,
+        1,
         null,
-        null,
+        1,
+        1,
         1,
         null,
         1,
@@ -1176,33 +1180,6 @@
         1,
         null
       ],
-      "/my_app/app/controllers/users_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/my_app/spec/models/photo_spec.rb": [
-        null,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null
-      ],
       "/my_app/spec/models/place_spec.rb": [
         null,
         null,
@@ -1370,6 +1347,6 @@
         null
       ]
     },
-    "timestamp": 1564566537
+    "timestamp": 1564640768
   }
 }
