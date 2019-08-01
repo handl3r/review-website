@@ -69,11 +69,11 @@ jobs:
           command: |
             ssh SSH_USER@SSH_HOST "bash -x ~/www/deployment.sh"
 
-workflows:
-  version: 2
-  build-and-deploy:
-    jobs:
-      - build
-      - deploy:
-        requires:
-          - build
+#workflows:
+#  version: 2
+#  build-and-deploy:
+#    jobs:
+#      - build
+#      - deploy:
+#        requires:
+#          - build
