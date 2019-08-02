@@ -52,6 +52,7 @@ end
 30.times do
     Place.create(
              user_id: companys.sample,
+             name: Faker::FunnyName.name ,
              address: Faker::Address.street_address.to_s << Faker::Address.city.to_s << Faker::Address.country,
              service_id: services.sample,
              # change after update reviewpaper od user
