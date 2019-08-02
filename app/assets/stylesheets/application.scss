@@ -1,33 +1,37 @@
 
 @import "bootstrap";
 
-//css for header
-//@mixin box_sizing {
-//  -moz-box-sizing: border-box;
-//  -webkit-box-sizing: border-box;
-//  box-sizing: border-box;
-//}
-//.debug_dump {
-//  clear: both;
-//  float: left;
-//  width: 100%;
-//  margin-top: 45px;
-//  @include box_sizing;
-//}
-//.ul_bar {
-//  float: right;
-//}
 
 #header_logo {
   width: 100px;
   height: 100px;
 }
 #navigation {
-  background-color: #f64c14;
+  background-color: rgba(0, 0, 0, .85);
 }
+#ul-bar li a {
+  color: white;
+  font-weight:bold;
+}
+#ul-bar {
+  li{
+    box-sizing: border-box;
+
+  }
+}
+#dropdown1 {
+  background: #1c2324;
+  a:hover {
+    color: #1c2324;
+  }
+}
+#navbarSupportedContent {
+  margin-right: 5%;
+}
+
 #text_logo{
   margin-left: 10px;
-  color: black;
+  color: white;
   float: left;
   font-size: 1.7em;
   font-weight: bold;
@@ -40,18 +44,37 @@
 
 //css for body
 
+body {
+  background: #f5f5f5;
+}
 .main_body {
   padding-top: 50px;
 }
+
+.btn-primary {
+  width: 100%;
+  height: 45px;
+}
+.form-control {
+  box-sizing: border-box;
+  height: 45px;
+}
+.form-check {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 
 .shared_link {
   padding-top: 15px;
   margin-left: 3%;
   text-decoration: underline;
+  text-align: center;
 }
 .topic {
   text-align: center;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 .link_unhappy {
   padding-top: 10px;
@@ -70,19 +93,32 @@
 }
 
 //css for footer
-.footer_logo {
-  width: 50px;
-  height: 50px;
+
+.footer {
+  background-color: rgba(0, 0, 0, .85);
+  margin-top: 30px;
+}
+.head_footer {
+  margin-top: 10px;
+}
+.fa {
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin-left: 50%;
+  margin-top: 20px;
 }
 #end_part_footer{
   padding-top: 30px;
 }
 #description{
   text-align: center;
+  color: white;
 }
 #time_fife {
   text-align: center;
   font-weight: bold;
+  color: white;
 }
 
 
