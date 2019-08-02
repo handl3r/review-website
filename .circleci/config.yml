@@ -40,11 +40,11 @@ jobs:
 
             bundle exec rake db:seed RAILS_ENV=test
 
-            bundle exec rspec spec/models --format progress \
+            bundle exec rspec --format progress \
               --format RspecJunitFormatter \
               --out /tmp/test-results/rspec.xml \
               --format progress \
-              $TEST_FILES
+              spec/models
 
       # collect reports
       - store_test_results:
