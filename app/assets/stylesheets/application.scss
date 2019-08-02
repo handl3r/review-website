@@ -94,8 +94,26 @@ body {
 .title-profile-card {
   text-align: center;
 }
-
-//css for footer
+// css for place index
+.list-places {
+  list-style: none;
+}
+.list-in {
+  display: inline-block;
+}
+.link-in {
+  margin-right: 5px;
+  float: right;
+}
+#link-new-place {
+  font-weight: bold;
+  color : black;
+  text-decoration: underline;
+}
+#link-new-place:hover{
+  color: #000099;
+}
+  //css for footer
 
 .footer {
   background-color: rgba(0, 0, 0, .85);

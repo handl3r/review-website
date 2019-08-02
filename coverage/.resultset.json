@@ -1,7 +1,11 @@
 {
   "RSpec": {
     "coverage": {
+<<<<<<< HEAD
       "/my_app/spec/models/review_spec.rb": [
+=======
+      "/my_app/spec/models/photo_spec.rb": [
+>>>>>>> addingPlaceCandV
         null,
         null,
         1,
@@ -10,6 +14,7 @@
         1,
         1,
         1,
+<<<<<<< HEAD
         1,
         null,
         1,
@@ -20,15 +25,21 @@
         1,
         1,
         null,
+=======
+>>>>>>> addingPlaceCandV
         1,
+        null,
         1,
         1,
         null,
         1,
         null,
         1,
+<<<<<<< HEAD
         1,
         1,
+=======
+>>>>>>> addingPlaceCandV
         null,
         null,
         null
@@ -1042,6 +1053,7 @@
         null,
         1,
         1,
+        1,
         null,
         null,
         null
@@ -1049,8 +1061,19 @@
       "/my_app/app/controllers/application_controller.rb": [
         1,
         1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        null,
         null,
         1,
+        0,
+        0,
+        0,
+        null,
         null,
         1,
         0,
@@ -1073,6 +1096,10 @@
         null
       ],
       "/my_app/app/helpers/pages_helper.rb": [
+        1,
+        null
+      ],
+      "/my_app/app/helpers/places_helper.rb": [
         1,
         null
       ],
@@ -1198,6 +1225,95 @@
         1,
         null
       ],
+<<<<<<< HEAD
+=======
+      "/my_app/spec/models/place_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/my_app/spec/models/review_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+>>>>>>> addingPlaceCandV
       "/my_app/app/models/review.rb": [
         null,
         null,
@@ -1211,8 +1327,88 @@
         1,
         null,
         null
+<<<<<<< HEAD
       ]
     },
     "timestamp": 1564728072
+=======
+      ],
+      "/my_app/spec/models/service_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/my_app/spec/models/user_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1564741913
+>>>>>>> addingPlaceCandV
   }
 }
