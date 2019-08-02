@@ -2,7 +2,7 @@
 
   <div class="box_header">
 
-    <nav class="nav navbar navbar-expand navbar-light nav-fill w-100" id="navigation" >
+    <nav class="nav navbar navbar-expand navbar-light nav-fill w-100" id="navigation">
 
       <%= link_to image_tag("logo.png", id: "header_logo"), root_path %>
       <%= link_to "ReviewPlaces", root_path, id: "text_logo" %>
@@ -25,6 +25,11 @@
                 <%= link_to "Home", root_path, class: 'dropdown-item' %>
                 <%= link_to "Profile", user_path(current_user), class: 'dropdown-item' %>
                 <%= link_to "Settings", edit_user_registration_path(current_user), class: 'dropdown-item' %>
+
+                <% if current_user.role == "Company" %>
+                  <div class="dropdown-divider"></div>
+                  <%= link_to "Manage your places", places_path, class: "dropdown-item" %>
+                <% end %>
                 <div class="dropdown-divider"></div>
                 <%= link_to "Sign out", destroy_user_session_path, class: 'dropdown-item', method: :delete %>
               </div>

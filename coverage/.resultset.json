@@ -1,23 +1,22 @@
 {
   "RSpec": {
     "coverage": {
-      "/my_app/spec/controllers/static_pages_controller_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
+      "/my_app/spec/models/photo_spec.rb": [
         null,
         null,
+        1,
         null,
         1,
         1,
         1,
         1,
+        1,
         null,
+        1,
+        1,
+        1,
+        null,
+        1,
         null,
         null,
         null
@@ -1031,6 +1030,7 @@
         null,
         1,
         1,
+        1,
         null,
         null,
         null
@@ -1038,8 +1038,19 @@
       "/my_app/app/controllers/application_controller.rb": [
         1,
         1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        null,
         null,
         1,
+        0,
+        0,
+        0,
+        null,
         null,
         1,
         0,
@@ -1062,6 +1073,10 @@
         null
       ],
       "/my_app/app/helpers/pages_helper.rb": [
+        1,
+        null
+      ],
+      "/my_app/app/helpers/places_helper.rb": [
         1,
         null
       ],
@@ -1185,96 +1200,6 @@
       "/my_app/spec/support/factory_bot.rb": [
         1,
         1,
-        null
-      ],
-      "/my_app/app/controllers/static_pages_controller.rb": [
-        1,
-        1,
-        null,
-        null,
-        1,
-        null,
-        null
-      ],
-      "/my_app/spec/controllers/users_controller_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/my_app/app/controllers/users_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/my_app/spec/decorators/static_page_decorator_spec.rb": [
-        1,
-        null,
-        1,
-        null
-      ],
-      "/my_app/app/decorators/static_page_decorator.rb": [
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/my_app/spec/helpers/static_pages_helper_spec.rb": [
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/my_app/spec/models/photo_spec.rb": [
-        null,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
         null
       ],
       "/my_app/spec/models/place_spec.rb": [
@@ -1450,22 +1375,8 @@
         null,
         null,
         null
-      ],
-      "/my_app/spec/views/static_pages/about.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/my_app/spec/views/static_pages/home.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
       ]
     },
-    "timestamp": 1564727926
+    "timestamp": 1564741913
   }
 }
