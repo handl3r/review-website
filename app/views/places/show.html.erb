@@ -1,3 +1,92 @@
-
 <%= link_to 'Edit', edit_place_path(@place) %> |
 <%= link_to 'Back', places_path %>
+<main role="main" class="container">
+  <div class="my-3 p-3 bg-white rounded box-shadow">
+    <h4 class="border-bottom border-gray pb-2 mb-0 title-table">Information your place</h4>
+    <table class="table">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Attribute</th>
+        <th scope="col">Value</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>id</td>
+        <td><%= @place.id %></td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>name</td>
+        <td><%= @place.name %></td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>address</td>
+        <td><%= @place.address %></td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>service</td>
+        <td><%= Service.find_by(id: @place.service_id).name %></td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td>phone-number</td>
+        <td><%= @place.phoneNumber %></td>
+      </tr>
+      <tr>
+        <th scope="row">6</th>
+        <td>time-open</td>
+        <td><%= @place.timeOpen.to_s + ' to ' + @place.timeClose.to_s %></td>
+      </tr>
+      <tr>
+        <th scope="row">7</th>
+        <td>description</td>
+        <td><%= @place.description %></td>
+      </tr>
+      <tr>
+        <th scope="row">8</th>
+        <td>number-ratings</td>
+        <td><%= @place.numberRatings %></td>
+      </tr>
+      <tr>
+        <th scope="row">9</th>
+        <td>medium-rating</td>
+        <td><%= @place.mediumRating %></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="my-3 p-3 bg-white rounded box-shadow">
+    <h4 class="border-bottom border-gray pb-2 mb-0 title-table">All review-paper about <%= @place.name %></h4>
+    <table class="table">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Id</th>
+        <th scope="col">Author</th>
+        <th scope="col">Rating</th>
+        <th scope="col">Content</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% i = 1 %>
+      <% @place.reviews.each do |review| %>
+        <tr>
+          <th scope="row"><%= i %></th>
+          <td><%= review.id %></td>
+          <td><%= link_to review.user.name, user_path(review.user) %></td>
+          <td><%= review.rating %></td>
+          <td><%= review.comment %></td>
+        </tr>
+        <% i += 1 %>
+      <% end %>
+
+      </tbody>
+    </table>
+  </div>
+</main>
+
