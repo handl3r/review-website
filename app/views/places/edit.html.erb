@@ -1,9 +1,6 @@
-
-<%#= render 'form', place: @place %>
-<!--<%#= link_to 'Show', @place %> |-->
-<%#= link_to 'Back', places_path %>
+<%= render 'menubar' %>
 <div class="row">
-  <div class="col-md-5 offset-md-3">
+  <div class="col-md-6 offset-md-3">
     <div class="topic"><h2>Edit Place</h2></div>
     <%= form_for(@place, url: place_path(@place), html: { method: :put }) do |f| %>
       <%= render "devise/shared/error_messages", resource: f.object %>

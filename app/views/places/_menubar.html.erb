@@ -1,10 +1,19 @@
-<div class="dropdown col-md-2 offset-md-9 menu-action">
-  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-    More Actions
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="/places">Manage</a>
-    <a class="dropdown-item" href="/places/new">New Place</a>
+<div class="container">
+  <div class="">
+  <div class="dropdown col-md-2 offset-md-10 menu-action">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      Manage Places
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="/places">Manage</a>
+      <a class="dropdown-item" href="/places/new">New Place</a>
+      <% if @place != nil && @place.name != nil %>
+        <a class="dropdown-item" href="/places/<%= @place.id%>/edit">Edit User</a>
+        <a class="dropdown-item" href="/places/<%= @place.id%>">Show User</a>
+        <a class="dropdown-item" href="/places/new"></a>
+      <% end %>
+    </div>
+  </div>
   </div>
 </div>
 
