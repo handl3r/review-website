@@ -1,5 +1,38 @@
-<h1>New Place</h1>
+<%= render 'menubar' %>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="topic"><h2>New Place</h2></div>
+    <%= form_for(@place, url: places_path(@place), html: {method: :post}) do |f| %>
+      <%= render "devise/shared/error_messages", resource: f.object %>
 
-<%= render 'form', place: @place %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control", placeholder: "Your name" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :service_id %>
+        <%= f.select(:service_id, Service.all.collect { |review| [review.name, review.id] }, {}, {class: 'form-control'}) %>
+      </div>
 
-<%= link_to 'Back', places_path %>
+      <div class="form-group">
+        <%= f.label :address %>
+        <%= f.text_area :address, class: "form-control", placeholder: "Your address" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :phoneNumber %>
+        <%= f.telephone_field :phoneNumber, class: "form-control", placeholder: "Your phoneNumber" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: "form-control" %>
+      </div>
+
+      <%= f.submit "Creat", class: "btn btn-primary" %>
+
+    <% end %>
+
+  </div>
+
+</div>
+
+
