@@ -120,7 +120,7 @@
           <div><strong> Your Places</strong></div>
           <% @user.places.each do |f| %>
             <!--          temp version, change when done with places-->
-            <%= link_to "#{f.name}", root_path %><br>
+            <%= link_to "#{f.name}", place_path(f.id) %><br>
           <% end %>
           </div>
         <% end %>
