@@ -25,7 +25,7 @@ class PlacesController < ApplicationController
   # POST /places
   # POST /places.json
   def create
-    @place = Place.new(place_params)
+    @place = Place.new(place_params.merge(user_id: current_user.id, numberRatings: 0, mediumRating: 0 ))
 
     respond_to do |format|
       if @place.save
@@ -42,7 +42,11 @@ class PlacesController < ApplicationController
   # PATCH/PUT /places/1.json
   def update
     respond_to do |format|
-      if @place.update(place_params)
+      user = User.find_for_authentication(email: current_user.email)
+      if !user.valid_password?(params[:place][:current_password])
+        flash[:danger] = "Check your password!"
+        format.html { redirect_to edit_place_path(@place)}
+      elsif @place.update(place_params_update.except(:current_password))
         format.html { redirect_to @place, notice: 'Place was successfully updated.' }
         format.json { render :show, status: :ok, location: @place }
       else
@@ -70,6 +74,9 @@ class PlacesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def place_params
-      params.fetch(:place, {})
+      params.require(:place).permit(:name,:address,:phoneNumber, :description, :service_id)
     end
+  def place_params_update
+    params.require(:place).permit(:name,:address,:phoneNumber, :description, :current_password)
+  end
 end

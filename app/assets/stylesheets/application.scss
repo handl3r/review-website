@@ -118,6 +118,15 @@ body {
   font-weight: bold;
   font-style: italic;
 }
+.link-of-show-places {
+  display: block;
+  text-align: right;
+  a {
+    float: none;
+  }
+}
+
+// css for menubar manage places
 
   //css for footer
 
@@ -146,6 +155,11 @@ body {
   text-align: center;
   font-weight: bold;
   color: white;
+}
+
+// css for menu-action
+.menu-action {
+
 }
 
 

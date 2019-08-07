@@ -15,5 +15,4 @@ class Place < ApplicationRecord
   validates :mediumRating, presence: true
   validates :phoneNumber, presence: true
   validates :description, presence: true, length: { minimum: 20 }
-
 end

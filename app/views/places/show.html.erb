@@ -1,5 +1,3 @@
-<%= link_to 'Edit', edit_place_path(@place) %> |
-<%= link_to 'Back', places_path %>
 <main role="main" class="container">
   <div class="my-3 p-3 bg-white rounded box-shadow">
     <h4 class="border-bottom border-gray pb-2 mb-0 title-table">Information your place</h4>
@@ -60,6 +58,11 @@
       </tbody>
     </table>
   </div>
+  <div class="btn-group link-of-show-places"  role="group">
+    <a href="<%= edit_place_path(@place) %>" class=" btn btn-info btn-secondary " role="button">Edit Place</a>
+    <a href="<%= places_path %>" class="btn btn-info btn-secondary" role="button">All Place</a>
+  </div>
+
   <div class="my-3 p-3 bg-white rounded box-shadow">
     <h4 class="border-bottom border-gray pb-2 mb-0 title-table">All review-paper about <%= @place.name %></h4>
     <table class="table">

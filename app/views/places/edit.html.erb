@@ -1,6 +1,41 @@
-<h1>Editing Place</h1>
 
-<%= render 'form', place: @place %>
+<%#= render 'form', place: @place %>
+<!--<%#= link_to 'Show', @place %> |-->
+<%#= link_to 'Back', places_path %>
+<div class="row">
+  <div class="col-md-5 offset-md-3">
+    <div class="topic"><h2>Edit Place</h2></div>
+    <%= form_for(@place, url: place_path(@place), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: f.object %>
 
-<%= link_to 'Show', @place %> |
-<%= link_to 'Back', places_path %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control", placeholder: "Your name"%>
+      </div>
+      <div class="form-group">
+        <%= f.label :address %>
+        <%= f.text_area :address, class: "form-control", placeholder:"Your address" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :phoneNumber %>
+        <%= f.telephone_field :phoneNumber, class: "form-control", placeholder:"Your phoneNumber" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :current_password %>
+        <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control", placeholder:"Enter current password" %>
+        <small>We need your current password to confirm your changes</small>
+      </div>
+
+      <%= f.submit "Update", class: "btn btn-primary" %>
+
+    <% end %>
+
+  </div>
+</div>
+
+
