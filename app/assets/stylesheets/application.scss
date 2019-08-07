@@ -125,6 +125,16 @@ body {
     float: none;
   }
 }
+// css for td
+td {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.description_area {
+  height: 200px;
+}
 
 // css for menubar manage places
 
