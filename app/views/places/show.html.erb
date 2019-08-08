@@ -1,4 +1,6 @@
-<%= render 'menubar' %>
+<% if @place.user == current_user %>
+  <%= render 'menubar' %>
+<% end %>
 <main role="main" class="container">
   <div class="my-3 p-3 bg-white rounded box-shadow">
     <h4 class="border-bottom border-gray pb-2 mb-0 title-table">Information your place</h4>
