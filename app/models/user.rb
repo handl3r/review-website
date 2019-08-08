@@ -20,4 +20,5 @@ class User < ApplicationRecord
   has_many :places
   has_many :reviews
   has_one :photo
+  has_one_attached :avatar
 end

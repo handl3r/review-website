@@ -2,9 +2,15 @@
   <div class="panel-body inf-content">
     <div class="row">
       <div class="col-md-2">
-        <img alt="" style="width:600px;" title="" class="img-circle img-thumbnail isTooltip" src="https://bootdey.com/img/Content/user-453533-fdadfd.png" data-original-title="Usuario">
+        <% if @user.avatar.attached? %>
+          <%= image_tag @user.avatar, class: "rounded-circle image-show-profile" %>
+<!--          <img src="<%#= url_for(@user.avatar) %>" alt="<%#= @user.name %> Avatar" height="100" width="100" class="img-rounded">-->
+          <%#= image_tag( @user.avatar.variant(resize: "50*50"), class: "img-circle img-thumbnail isTooltip") %>
+        <% else %>
+            <img alt="" style="width:600px;" title="" class="img-circle img-thumbnail isTooltip" src="https://bootdey.com/img/Content/user-453533-fdadfd.png" data-original-title="Usuario">
+        <% end %>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 offset-md-1">
         <div class="title-profile-card"><strong>Information</strong></div>
         <div class="table-responsive">
           <table class="table table-condensed table-responsive table-user-information">

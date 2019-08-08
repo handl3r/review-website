@@ -8,8 +8,8 @@
       <a class="dropdown-item" href="/places">Manage</a>
       <a class="dropdown-item" href="/places/new">New Place</a>
       <% if @place != nil && @place.name != nil %>
-        <a class="dropdown-item" href="/places/<%= @place.id%>/edit">Edit User</a>
-        <a class="dropdown-item" href="/places/<%= @place.id%>">Show User</a>
+        <a class="dropdown-item" href="/places/<%= @place.id%>/edit">Edit Place</a>
+        <a class="dropdown-item" href="/places/<%= @place.id%>">Show Place</a>
         <a class="dropdown-item" href="/places/new"></a>
       <% end %>
     </div>

@@ -21,7 +21,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
   # def update
-  #   super
+  #   respond_to do |format|
+  #     @user = User.find_for_authentication(email: current_user.email)
+  #     if !@user.valid_password?(params[:user][:current_password])
+  #       flash[:danger] = "Check your password!"
+  #       format.html { redirect_to  edit_user_registration_path(@user)}
+  #     elsif @user.update(params.except(:current_password))
+  #       format.html { redirect_to @user, notice: 'User was successfully updated.' }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @user.errors, status: :unprocessable_entity }
+  #     end
+  #   end
   # end
 
   # DELETE /resource
