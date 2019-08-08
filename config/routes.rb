@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   #get '/user/show/:id' => 'users#show'
   resources :users, :only => [:show]
   resources :places
+  resources :reviews
   root to: 'pages#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
