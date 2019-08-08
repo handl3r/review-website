@@ -1,6 +1,7 @@
 class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :edit, :update, :destroy]
   before_action :require_role_company, only: [:index]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   # GET /places
   # GET /places.json
   def index
@@ -78,5 +79,8 @@ class PlacesController < ApplicationController
     end
   def place_params_update
     params.require(:place).permit(:name,:address,:phoneNumber, :description, :current_password)
+  end
+  def correct_user
+    redirect_to root_path unless current_user == @place.user
   end
 end
