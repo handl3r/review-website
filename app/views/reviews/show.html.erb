@@ -1,4 +1,47 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%#= notice %></p>-->
 
-<%= link_to 'Edit', edit_review_path(@review) %> |
-<%= link_to 'Back', reviews_path %>
+<!--<%#= link_to 'Edit', edit_review_path(@review) %> |-->
+<%#= link_to 'Back', reviews_path %>
+
+<% if @review.user == current_user %>
+  <%= render 'menubar' %>
+<% end %>
+<main role="main" class="container">
+  <div class="my-3 p-3 bg-white rounded box-shadow">
+    <h4 class="border-bottom border-gray pb-2 mb-0 title-table">Information your place</h4>
+    <table class="table">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Attribute</th>
+        <th scope="col">Value</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>id</td>
+        <td><%= @review.id %></td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>rating</td>
+        <td><%= @review.rating %></td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>content</td>
+        <td><%= @review.comment %></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <% if current_user == @review.user %>
+    <div class="btn-group link-of-show-places"  role="group">
+      <a href="<%= edit_review_path(@review) %>" class=" btn btn-info btn-secondary " role="button">Edit Review</a>
+      <a href="<%= reviews_path %>" class="btn btn-info btn-secondary" role="button">All Reviews</a>
+    </div>
+  <% end %>
+
+</main>
+

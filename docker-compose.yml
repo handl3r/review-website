@@ -3,6 +3,7 @@ services:
   web:
     container_name: project1_rails
     build: .
+    stdin_open: true
     tty: true
     volumes:
       - .:/my_app

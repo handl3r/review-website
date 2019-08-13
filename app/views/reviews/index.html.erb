@@ -1,32 +1,5 @@
-<!--<p id="notice"><%#= notice %></p>-->
-
-<!--<h1>Reviews</h1>-->
-
-<!--<table>-->
-<!--  <thead>-->
-<!--    <tr>-->
-<!--      <th colspan="3"></th>-->
-<!--    </tr>-->
-<!--  </thead>-->
-
-<!--  <tbody>-->
-<%# @reviews.each do |review| %>
-<!--      <tr>-->
-<!--        <td><%#= link_to 'Show', review %></td>-->
-<!--        <td><%#= link_to 'Edit', edit_review_path(review) %></td>-->
-<!--        <td><%#= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
-<!--      </tr>-->
-<%# end %>
-<!--  </tbody>-->
-<!--</table>-->
-
-<!--<br>-->
-
-<%#= link_to 'New Review', new_review_path %>
-
-
 <% if @user.role == "Reviewer" %>
-  <%#= render 'menubar' %>
+  <%= render 'menubar' %>
   <main role="main" class="container">
     <div class="my-3 p-3 bg-white rounded box-shadow">
       <h4 class="border-bottom border-gray pb-2 mb-0">Manage your review-paper</h4>
@@ -62,7 +35,7 @@
           </li>
         <% end %>
         <small class="d-block text-right mt-3">
-          <%= link_to "Make new reviews", new_review_path, id: "link-new-place" %>
+          <%= link_to "Make new review-paper", new_review_path, id: "link-new-place" %>
         </small>
       </ul>
     </div>

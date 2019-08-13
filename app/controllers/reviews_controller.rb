@@ -41,8 +41,10 @@ class ReviewsController < ApplicationController
   # PATCH/PUT /reviews/1
   # PATCH/PUT /reviews/1.json
   def update
+    hash_value = {type: 2, review_id: @review.id, rating: review_params_update[:rating],
+                  place_id: @review.place_id}
     respond_to do |format|
-      if @review.update(review_params)
+      if Place.new.increase_rating(hash_value) && @review.update(review_params_update)
         format.html { redirect_to @review, notice: 'Review was successfully updated.' }
         format.json { render :show, status: :ok, location: @review }
       else
@@ -63,13 +65,18 @@ class ReviewsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_review
-      @review = Review.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def review_params
-      params.fetch(:review, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_review
+    @review = Review.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def review_params
+    params.fetch(:review, {})
+  end
+
+  def review_params_update
+    params.require(:review).permit(:rating, :comment)
+  end
 end

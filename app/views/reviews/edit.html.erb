@@ -1,6 +1,23 @@
-<h1>Editing Review</h1>
+<%= render 'menubar' %>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="topic"><h2>Edit Review</h2></div>
+    <%= form_for(@review, url: review_path(@review), html: {method: :put}) do |f| %>
+      <%= render "devise/shared/error_messages", resource: f.object %>
 
-<%= render 'form', review: @review %>
+      <div class="form-group">
+        <%= f.label :rating %>
+        <%= f.select :rating, [1, 2, 3, 4, 5], {}, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :comment %>
+        <%= f.text_area :comment, class: "form-control", placeholder: "content",size: "30x10" %>
+      </div>
+      <%= f.submit "Update", class: "btn btn-primary" %>
 
-<%= link_to 'Show', @review %> |
-<%= link_to 'Back', reviews_path %>
+    <% end %>
+
+  </div>
+</div>
+
+

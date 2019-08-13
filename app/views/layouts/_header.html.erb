@@ -29,6 +29,9 @@
                 <% if current_user.role == "Company" %>
                   <div class="dropdown-divider"></div>
                   <%= link_to "Manage your places", places_path, class: "dropdown-item" %>
+                  <% else %>
+                  <div class="dropdown-divider"></div>
+                  <%= link_to "Manage your reviews", reviews_path, class: "dropdown-item" %>
                 <% end %>
                 <div class="dropdown-divider"></div>
                 <%= link_to "Sign out", destroy_user_session_path, class: 'dropdown-item', method: :delete %>
