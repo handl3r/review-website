@@ -1,4 +1,3 @@
-
 @import "bootstrap";
 
 
@@ -6,30 +5,36 @@
   width: 100px;
   height: 100px;
 }
+
 #navigation {
   background-color: rgba(0, 0, 0, .85);
 }
+
 #ul-bar li a {
   color: white;
-  font-weight:bold;
+  font-weight: bold;
 }
+
 #ul-bar {
-  li{
+  li {
     box-sizing: border-box;
 
   }
 }
+
 #dropdown1 {
   background: #1c2324;
+
   a:hover {
     color: #1c2324;
   }
 }
+
 #navbarSupportedContent {
   margin-right: 5%;
 }
 
-#text_logo{
+#text_logo {
   margin-left: 10px;
   color: white;
   float: left;
@@ -47,6 +52,7 @@
 body {
   background: #f5f5f5;
 }
+
 .main_body {
   padding-top: 50px;
 }
@@ -55,10 +61,12 @@ body {
   width: 100%;
   height: 40px;
 }
+
 .form-control {
   box-sizing: border-box;
   height: 45px;
 }
+
 .form-check {
   text-align: center;
   margin-bottom: 10px;
@@ -71,14 +79,17 @@ body {
   text-decoration: underline;
   text-align: center;
 }
+
 .topic {
   text-align: center;
   font-weight: bold;
   margin-bottom: 20px;
 }
+
 .link_unhappy {
   padding-top: 10px;
 }
+
 .cancel-button {
   margin-top: 10px;
 }
@@ -94,37 +105,46 @@ body {
 .title-profile-card {
   text-align: center;
 }
+
 // css for place index
 .list-places {
   list-style: none;
 }
+
 .list-in {
   display: inline-block;
 }
+
 .link-in {
   margin-right: 5px;
   float: right;
 }
+
 #link-new-place {
   font-weight: bold;
-  color : black;
+  color: black;
   text-decoration: underline;
 }
-#link-new-place:hover{
+
+#link-new-place:hover {
   color: #000099;
 }
+
 //css for show place
 .title-table {
   font-weight: bold;
   font-style: italic;
 }
+
 .link-of-show-places {
   display: block;
   text-align: right;
+
   a {
     float: none;
   }
 }
+
 // css for td
 td {
   max-width: 500px;
@@ -132,21 +152,24 @@ td {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 .description_area {
   height: 200px;
 }
 
 // css for menubar manage places
 
-  //css for footer
+//css for footer
 
 .footer {
   background-color: rgba(0, 0, 0, .85);
   margin-top: 30px;
 }
+
 .head_footer {
   margin-top: 10px;
 }
+
 .fa {
   font-size: 30px;
   text-align: center;
@@ -154,13 +177,16 @@ td {
   margin-left: 50%;
   margin-top: 20px;
 }
-#end_part_footer{
+
+#end_part_footer {
   padding-top: 30px;
 }
-#description{
+
+#description {
   text-align: center;
   color: white;
 }
+
 #time_fife {
   text-align: center;
   font-weight: bold;
@@ -171,17 +197,145 @@ td {
 .menu-action {
   padding: 0;
 }
+
 .dropdown-menu {
   width: 100%;
 }
+
 //css for image
 .image-avatar {
   text-align: center;
 }
+
 .image-show-profile {
   width: 200px;
   height: 200px;
 }
+
+// css for homepage
+.banner {
+  background: #33cccc;
+}
+
+.nameList {
+  text-align: center;
+  background: #003366;
+  color: white;
+  height: 40px;
+
+  strong {
+    font-size: 20px;
+  }
+  strong:hover {
+    color: red;
+    cursor: pointer;
+  }
+}
+
+.data-list-places {
+  font-size: 13px;
+  list-style: none;
+}
+
+.name-place {
+  text-align: center;
+
+  a {
+    font-size: 15px;
+    color: #1c2324;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: red;
+  }
+
+
+}
+
+.key-value {
+  text-align: center;
+}
+
+.key {
+  width: 40%;
+  display: inline-block;
+}
+
+.value {
+  width: 40%;
+  display: inline-block;
+}
+
+.checked {
+  color: orange;
+}
+
+#name-home-review {
+  background: chocolate;
+}
+
+.name-list-review {
+  text-align: center;
+  color: black;
+  strong {
+    font-size: 15px;
+  }
+}
+
+.home-review {
+  margin-top: 20px;
+}
+
+.list-notice {
+  a {
+    font-size: 80%;
+  }
+}
+
+.review-place {
+  font-weight: bold;
+  color: black;
+}
+.review-place:hover {
+  color: red;
+}
+
+.review-user {
+  font-weight: bold;
+  color: black;
+}
+.review-user:hover {
+  color: red;
+}
+
+.review-text-notice {
+  text-decoration: underline;
+}
+.review-text-notice:hover {
+  animation: blinkingText 0.8s infinite;
+}
+
+@keyframes blinkingText {
+  0% {
+    color: #000;
+  }
+  49% {
+    color: transparent;
+  }
+  50% {
+    color: transparent;
+  }
+  99% {
+    color: transparent;
+  }
+  100% {
+    color: #000;
+  }
+}
+
+
 
 
 

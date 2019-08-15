@@ -1,0 +1,93 @@
+<div class="row">
+  <div class="col-md-5 list-places-registration">
+    <div class="banner">
+      <div class="nameList"><strong title="10 newest place since 3 day ago">10 Newest Places</strong></div>
+      <ul class="list-group data-list-places ">
+        <% StaticPagesController.get_list_registration.each do |place| %>
+          <li class="list-group-item ">
+            <ul class="list-group">
+              <li class="list-group-item list-group-item-primary key-value-first">
+                <div class="name-place"><%= link_to place.name, place_path(place.id), class: 'key-first' %>
+                </div>
+              </li>
+              <li class="list-group-item key-value">
+                <div><strong class="key">Service</strong>
+                  <span class="value"><%= place.service.name %></span>
+                </div>
+              </li>
+              <li class="list-group-item key-value">
+                <div><strong class="key">MediumRating</strong>
+                  <span class="value"><%= place.mediumRating %></span>
+                </div>
+              </li>
+              <li class="list-group-item key-value">
+                <div><strong class="key">Number Reviews</strong>
+                  <span class="value"><%= place.reviews.count %></span>
+                </div>
+              </li>
+              <li class="list-group-item key-value">
+                <div><strong class="key">Address</strong>
+                  <span class="value"><%= place.address %></span>
+                </div>
+              </li>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-5 list-places-ratings">
+    <div class="banner">
+      <div class="nameList"><strong title="Top 10 rating place">Top 10 Place</strong></div>
+      <ul class="list-group data-list-places">
+        <% StaticPagesController.get_list_rating.each do |place| %>
+          <li class="list-group-item ">
+            <ul class="list-group">
+              <li class="list-group-item list-group-item-primary">
+                <div class="name-place"><%= link_to place.name, place_path(place.id) %></div>
+              </li>
+              <li class="list-group-item key-value">
+                <div><strong class="key">Service</strong>
+                  <span class="value"><%= place.service.name %></span>
+                </div>
+              </li>
+              <li class="list-group-item key-value">
+                <div><strong class="key">MediumRatings</strong>
+                  <scan class="value"><%= place.numberRatings %></scan>
+                </div>
+              </li>
+              <li class="list-group-item key-value">
+                <div><strong class="key">Number Reviews</strong>
+                  <scan class="value"><%= place.reviews.count %></scan>
+                </div>
+              </li>
+              <li class="list-group-item key-value">
+                <div><strong class="key">Address</strong>
+                  <scan class="value"><%= place.address %></scan>
+                </div>
+              </li>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-2 ">
+    <div class="name-list-review" id="name-home-review"><strong title="10 newest reviews">Reviews</strong></div>
+    <ul class="list-group data-list-review ">
+      <% StaticPagesController.get_newest_list_review.each do |review| %>
+        <li class="list-group-item ">
+          <div class="list-notice">
+            <%= link_to review.place.name, place_path(review.place), class: "review-place",
+                        title: "More information about this place" %>
+            <%= link_to "be reviewed by", review_path(review), class: "review-text-notice",
+                        title: "More information" %>
+            <%= link_to review.user.name, user_path(review.user),
+                        class: "review-user", title: "More information about this place" %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
