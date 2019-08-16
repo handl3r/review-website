@@ -168,10 +168,10 @@ body {
 
 // css for td
 td {
-  max-width: 500px;
+
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .description_area {

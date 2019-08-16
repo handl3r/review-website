@@ -1,5 +1,4 @@
-<div class="container">
-  <div class="">
+<div class="row">
   <div class="dropdown col-md-2 offset-md-10 menu-action">
     <button type="button" class="btn btn-primary dropdown-toggle button-manage" data-toggle="dropdown">
       Manage Places
@@ -8,12 +7,12 @@
       <a class="dropdown-item" href="/places">Manage</a>
       <a class="dropdown-item" href="/places/new">New Place</a>
       <% if @place != nil && @place.name != nil %>
-        <a class="dropdown-item" href="/places/<%= @place.id%>/edit">Edit Place</a>
-        <a class="dropdown-item" href="/places/<%= @place.id%>">Show Place</a>
+        <a class="dropdown-item" href="/places/<%= @place.id %>/edit">Edit Place</a>
+        <a class="dropdown-item" href="/places/<%= @place.id %>">Show Place</a>
         <a class="dropdown-item" href="/places/new"></a>
       <% end %>
     </div>
   </div>
-  </div>
 </div>
+
 
