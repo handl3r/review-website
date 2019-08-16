@@ -2,49 +2,51 @@
 
   <div class="box_header">
 
-    <nav class="nav navbar navbar-expand navbar-light nav-fill w-100" id="navigation">
+    <nav class="nav navbar navbar-expand-md navbar-light nav-fill w-100" id="navigation">
+      <div class="container-fluid">
+        <%= link_to image_tag("logo.png", id: "header_logo"), root_path %>
+        <%= link_to "ReviewPlaces", root_path, class: "navbar-brand", id: "text_logo" %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <%= link_to image_tag("logo.png", id: "header_logo"), root_path %>
-      <%= link_to "ReviewPlaces", root_path, id: "text_logo" %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto " id="ul-bar">
+            <li><%= link_to "Home", root_path, class: 'nav-item active nav-link ' %></li>
+            <li><%= link_to "About", root_path, class: 'nav-item active nav-link ' %></li>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto " id="ul-bar">
-          <li><%= link_to "Home", root_path, class: 'nav-item active nav-link ' %></li>
-          <li><%= link_to "About", root_path, class: 'nav-item active nav-link ' %></li>
+            <% if user_signed_in? %>
+              <li><%= link_to "Notifications", root_path, class: 'nav-item active nav-link' %></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Account
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown1">
+                  <%= link_to "Home", root_path, class: 'dropdown-item' %>
+                  <%= link_to "Profile", user_path(current_user), class: 'dropdown-item' %>
+                  <%= link_to "Settings", edit_user_registration_path(current_user), class: 'dropdown-item' %>
 
-          <% if user_signed_in? %>
-            <li><%= link_to "Notifications", root_path, class: 'nav-item active nav-link' %></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Account
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown1">
-                <%= link_to "Home", root_path, class: 'dropdown-item' %>
-                <%= link_to "Profile", user_path(current_user), class: 'dropdown-item' %>
-                <%= link_to "Settings", edit_user_registration_path(current_user), class: 'dropdown-item' %>
-
-                <% if current_user.role == "Company" %>
-                  <div class="dropdown-divider"></div>
-                  <%= link_to "Manage your places", places_path, class: "dropdown-item" %>
+                  <% if current_user.role == "Company" %>
+                    <div class="dropdown-divider"></div>
+                    <%= link_to "Manage your places", places_path, class: "dropdown-item" %>
                   <% else %>
+                    <div class="dropdown-divider"></div>
+                    <%= link_to "Manage your reviews", reviews_path, class: "dropdown-item" %>
+                  <% end %>
                   <div class="dropdown-divider"></div>
-                  <%= link_to "Manage your reviews", reviews_path, class: "dropdown-item" %>
-                <% end %>
-                <div class="dropdown-divider"></div>
-                <%= link_to "Sign out", destroy_user_session_path, class: 'dropdown-item', method: :delete %>
-              </div>
-            </li>
-            </ul>
-          <% else %>
-            <li><%= link_to "Sign in", new_user_session_path, class: 'nav-item active nav-link' %></li>
-            <li><%= link_to "Sign up", new_user_registration_path, class: 'nav-item active nav-link' %></li>
-            </ul>
-          <% end %>
+                  <%= link_to "Sign out", destroy_user_session_path, class: 'dropdown-item', method: :delete %>
+                </div>
+              </li>
+              </ul>
+            <% else %>
+              <li><%= link_to "Sign in", new_user_session_path, class: 'nav-item active nav-link' %></li>
+              <li><%= link_to "Sign up", new_user_registration_path, class: 'nav-item active nav-link' %></li>
+              </ul>
+            <% end %>
 
-          </div>
+            </div>
+      </div>
+
 
     </nav>
 

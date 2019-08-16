@@ -2,11 +2,18 @@
 @import "static_pages";
 
 
-#header_logo {
-  width: 100px;
-  height: 100px;
+#dropdown1 {
+  text-align: center;
 }
 
+
+
+#header_logo {
+  height: 100px;
+}
+#text_logo:hover {
+  color: red;
+}
 #navigation {
   background-color: rgba(0, 0, 0, .85);
 }
@@ -14,6 +21,9 @@
 #ul-bar li a {
   color: white;
   font-weight: bold;
+}
+#ul-bar li:hover {
+  background: #333333;
 }
 
 #ul-bar {
@@ -29,6 +39,12 @@
   a:hover {
     color: #1c2324;
   }
+}
+a.dropdown-item {
+  white-space: normal;
+}
+button.btn.btn-primary.dropdown-toggle {
+  min-width: 170px;
 }
 
 #navbarSupportedContent {
