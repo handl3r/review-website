@@ -78,7 +78,7 @@ class PlacesController < ApplicationController
       params.require(:place).permit(:name,:address,:phoneNumber, :description, :service_id)
     end
   def place_params_update
-    params.require(:place).permit(:name,:address,:phoneNumber, :description, :current_password)
+    params.require(:place).permit(:name,:address,:phoneNumber, :description, :current_password, images: [])
   end
   def correct_user
     redirect_to root_path flash[:danger] = "This place is not belong to you" unless current_user == @place.user

@@ -7,21 +7,23 @@
 }
 
 
-
 #header_logo {
   height: 100px;
 }
+
 #text_logo:hover {
   color: red;
 }
+
 #navigation {
-  background-color: rgba(0, 0, 0, .85);
+  background-color: rgba(0, 0, 0, .85) !important;
 }
 
 #ul-bar li a {
   color: white;
   font-weight: bold;
 }
+
 #ul-bar li:hover {
   background: #333333;
 }
@@ -40,9 +42,11 @@
     color: #1c2324;
   }
 }
+
 a.dropdown-item {
   white-space: normal;
 }
+
 button.btn.btn-primary.dropdown-toggle {
   min-width: 170px;
 }
@@ -67,7 +71,7 @@ button.btn.btn-primary.dropdown-toggle {
 //css for body
 
 body {
-  background: #f5f5f5;
+  background: whitesmoke;
 }
 
 .main_body {
@@ -243,6 +247,7 @@ td {
   strong {
     font-size: 20px;
   }
+
   strong:hover {
     color: red;
     cursor: pointer;
@@ -296,6 +301,7 @@ td {
 .name-list-review {
   text-align: center;
   color: black;
+
   strong {
     font-size: 15px;
   }
@@ -315,6 +321,7 @@ td {
   font-weight: bold;
   color: black;
 }
+
 .review-place:hover {
   color: red;
 }
@@ -323,6 +330,7 @@ td {
   font-weight: bold;
   color: black;
 }
+
 .review-user:hover {
   color: red;
 }
@@ -330,6 +338,7 @@ td {
 .review-text-notice {
   text-decoration: underline;
 }
+
 .review-text-notice:hover {
   animation: blinkingText 0.8s infinite;
 }
@@ -357,15 +366,33 @@ td {
   background: rgba(0, 0, 0, 0.85);
   border: 0px;
 }
+
 .button-manage:hover {
   color: black;
-  border: 2px solid black;
 }
+
 .menu-action div a:hover {
   background: #0062cc;
   color: white;
 }
 
+// css for show place page
+.place-att {
+  font-weight: bold;
+}
 
+.place-att:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 
+// css for carousel
+.image-place {
+  margin-bottom: 20px;
+  width: 100%;
+}
 
+.carousel-inner div img {
+  width: 100%;
+  max-height: 400px;
+}
