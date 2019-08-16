@@ -16,15 +16,15 @@ class Place < ApplicationRecord
   validates :description, presence: true, length: { minimum: 20 }
   public
   def increase_rating(hash_value)
-    place = Place.find_by(id: hash_value[:place_id])
+
     if hash_value[:type] == 1 # new review
-      place.numberRatings += 1
-      place.mediumRating *= ((place.numberRatings - 1) / place.numberRatings)
-      place.mediumRating += hash_value[:rating].to_f / place.numberRatings
+      self.numberRatings += 1
+      self.mediumRating *= ((place.numberRatings - 1) / place.numberRatings)
+      self.mediumRating += hash_value[:rating].to_f / place.numberRatings
     elsif hash_value[:type] == 2 # edit review
       review = Review.find_by(id: hash_value[:review_id])
-      place.mediumRating += ((hash_value[:rating].to_f - review.rating).to_f / place.numberRatings)
+      self.mediumRating += ((hash_value[:rating].to_f - review.rating).to_f / self.numberRatings)
     end
-    place.save
+    self.save
   end
 end

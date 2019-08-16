@@ -42,9 +42,10 @@ class ReviewsController < ApplicationController
   # PATCH/PUT /reviews/1.json
   def update
     hash_value = {type: 2, review_id: @review.id, rating: review_params_update[:rating],
-                  place_id: @review.place_id}
+                  place_id: @review.place.id}
+    @place = Place.find_by(id: hash_value[:place_id])
     respond_to do |format|
-      if Place.new.increase_rating(hash_value) && @review.update(review_params_update)
+      if @place.increase_rating(hash_value) && @review.update(review_params_update)
         format.html { redirect_to @review, notice: 'Review was successfully updated.' }
         format.json { render :show, status: :ok, location: @review }
       else
