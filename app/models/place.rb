@@ -16,7 +16,6 @@ class Place < ApplicationRecord
   validates :description, presence: true, length: { minimum: 20 }
   public
   def increase_rating(hash_value)
-
     if hash_value[:type] == 1 # new review
       self.numberRatings += 1
       self.mediumRating *= ((place.numberRatings - 1) / place.numberRatings)

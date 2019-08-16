@@ -70,12 +70,16 @@ User.all.each do |user|
   reviewers.push(user.id) if user.role == 'Reviewer'
 end
 Place.all.each do |place|
+  rating = Faker::Number.between(1, 5)
   Review.create(
             user_id: reviewers.sample,
             place_id: place.id,
-            rating: Faker::Number.between(1, 5),
+            rating: rating,
             comment: Faker::Lorem.paragraph(10)
           )
+  place.numberRatings += 1
+  place.mediumRating += rating
+  place.save
 end
 # Generate photo 
   # generate avatar

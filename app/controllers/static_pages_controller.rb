@@ -69,7 +69,7 @@ class StaticPagesController < ApplicationController
       if result_data.length == 5
          return result_data
       else
-        value.sort_by! { |data| data.mediumRating }.reverse
+        (value.sort_by! { |data| data.mediumRating }).reverse!
         result_data.concat get_top(value, result_data.length)
       end
     end
