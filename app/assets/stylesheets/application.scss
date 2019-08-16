@@ -352,6 +352,19 @@ td {
   }
 }
 
+// button manage for manage page
+.button-manage {
+  background: rgba(0, 0, 0, 0.85);
+  border: 0px;
+}
+.button-manage:hover {
+  color: black;
+  border: 2px solid black;
+}
+.menu-action div a:hover {
+  background: #0062cc;
+  color: white;
+}
 
 
 
