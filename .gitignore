@@ -24,6 +24,7 @@
 .byebug_history
 /coverage
 .idea
+.vscode
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
