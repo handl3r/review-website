@@ -4,6 +4,9 @@ class StaticPagesController < ApplicationController
 
   def about
   end
+  def search
+
+  end
 
   def self.get_newest_list_review
     list_data = []

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'static_pages/home'
   get  '/about', to: 'static_pages#about'
+  get '/search', to: 'static_pages#search'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users, controllers: {sessions: 'users/sessions', registrations: 'users/registrations'}
