@@ -25,12 +25,11 @@ class ReviewsController < ApplicationController
   # POST /reviews
   # POST /reviews.json
   def create
-    review_params.merge!(user_id: current_user.id)
-    @review = Review.new(review_params)
+    @review = Review.new(review_params.merge!(user_id: current_user.id))
     hash_value = review_params.merge(type: 1)
     @place = Place.find_by(id: hash_value[:place_id])
     respond_to do |format|
-      if  @place.increase_rating(hash_value) && @review.save
+      if  @review.save && @place.increase_rating(hash_value)
         @place.save
         format.html { redirect_to @review, notice: 'Review was successfully created.' }
         format.json { render :show, status: :created, location: @review }

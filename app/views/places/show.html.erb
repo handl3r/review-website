@@ -118,7 +118,7 @@
   <div class="row">
     <div class="bg-white rounded box-shadow w-100">
       <h4 class="border-bottom border-gray pb-2 mb-0 title-table">All review-paper about <%= @place.name %></h4>
-      <table class="table">
+      <table class="table table-review">
         <thead class="thead-dark">
         <tr>
           <th scope="col">#</th>
@@ -126,6 +126,7 @@
           <th scope="col">Author</th>
           <th scope="col">Rating</th>
           <th scope="col">Content</th>
+          <th scope="col">Link</th>
         </tr>
         </thead>
         <tbody>
@@ -136,23 +137,34 @@
             <td><%= review.id %></td>
             <td><%= link_to review.user.name, user_path(review.user) %></td>
             <td><%= review.rating %></td>
-            <td><%= review.comment %></td>
+            <td id="comment"><%= review.comment %></td>
+            <td><%= link_to "Show more", review_path(review.id), class: "showmore" %></td>
           </tr>
           <% i += 1 %>
         <% end %>
 
         </tbody>
       </table>
+      <div class="col-md-2 offset-md-10">
+        <% review = Review.find_by(user_id: current_user.id,place_id: @place.id)%>
+        <% if current_user.reviews.include? review %>
+          <button class="btn btn-primary button-edit-review" title="you used to review this place">
+            <%= link_to "Edit your review",edit_review_path(review) %>
+          </button>
+        <% else %>
+          <%= render 'reviews/form_new_review' %>
+        <% end %>
+      </div>
+
     </div>
   </div>
   <div class="row">
     <div class=" bg-white rounded box-shadow w-100">
-      <h4 class="border-bottom border-gray title-table">Similar Places</h4>
+      <h4 class="border-bottom border-gray pb-2 mb-0 title-table">Similar Places</h4>
       <table class="table">
         <thead class="thead-dark">
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Id</th>
           <th scope="col">Name</th>
           <th scope="col">MediumRating</th>
           <th scope="col">NumberRatings</th>
@@ -164,7 +176,6 @@
         <% @place.find_same_type_place.each do |place| %>
           <tr>
             <th scope="row"><%= i %></th>
-            <td><%= place.id %></td>
             <td><%= link_to place.name, place_path(place) %></td>
             <td><%= place.mediumRating %></td>
             <td><%= place.numberRatings %></td>

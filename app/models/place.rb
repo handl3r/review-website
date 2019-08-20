@@ -21,8 +21,8 @@ class Place < ApplicationRecord
   def increase_rating(hash_value)
     if hash_value[:type] == 1 # new review
       self.numberRatings += 1
-      self.mediumRating *= ((place.numberRatings - 1) / place.numberRatings)
-      self.mediumRating += hash_value[:rating].to_f / place.numberRatings
+      self.mediumRating *= ((self.numberRatings - 1).to_f / self.numberRatings)
+      self.mediumRating += hash_value[:rating].to_f / self.numberRatings
     elsif hash_value[:type] == 2 # edit review
       review = Review.find_by(id: hash_value[:review_id])
       self.mediumRating += ((hash_value[:rating].to_f - review.rating).to_f / self.numberRatings)

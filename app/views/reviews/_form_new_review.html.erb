@@ -1,0 +1,32 @@
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
+  Make your review
+</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New review for <%= @place.name %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= form_for :review, url: "/reviews", method: "post" do |f| %>
+          <div class="form-group">
+            <%= f.label :place_id, class: "col-form-label" %>
+            <%= f.text_field :place_id, value: "#{@place.id}", class: "form-control", readonly: true %>
+          </div>
+          <div class="form-group">
+            <%= f.label :rating, class: "col-form-label" %>
+            <%= f.select :rating, [1, 2, 3, 4, 5], {}, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :comment, class: "col-form-label" %>
+            <%= f.text_area :comment, class: "form-control" %>
+          </div>
+          <%= f.submit class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

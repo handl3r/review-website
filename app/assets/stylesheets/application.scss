@@ -165,7 +165,22 @@ body {
     float: none;
   }
 }
+.showmore {
+  text-decoration: underline;
+}
+.button-edit-review {
+  a {
+    color: white;
+  }
+}
+.table-review {
+  tbody {
+    #comment {
+      word-break: break-word;
+    }
+  }
 
+}
 // css for td
 td {
 
