@@ -8,7 +8,7 @@ class StaticPagesController < ApplicationController
   def self.get_newest_list_review
     list_data = []
     length_list = 0
-    Review.all.each do |review|
+    Review.all.reverse.each do |review|
       if review.created_at - 20.day.ago > 0
         list_data.push(review)
         length_list += 1
@@ -23,7 +23,7 @@ class StaticPagesController < ApplicationController
   def self.get_list_registration
     list_data = []
     length_list = 0
-    Place.all.each do |place|
+    Place.all.reverse.each do |place|
       if place.created_at - 3.day.ago > 0
         list_data.push(place)
         length_list += 1
