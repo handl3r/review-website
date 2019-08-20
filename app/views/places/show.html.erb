@@ -145,6 +145,7 @@
 
         </tbody>
       </table>
+      <% if current_user.role == "Reviewer" %>
       <div class="col-md-2 offset-md-10">
         <% review = Review.find_by(user_id: current_user.id,place_id: @place.id)%>
         <% if current_user.reviews.include? review %>
@@ -155,6 +156,7 @@
           <%= render 'reviews/form_new_review' %>
         <% end %>
       </div>
+        <% end %>
 
     </div>
   </div>
