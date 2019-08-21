@@ -6,7 +6,7 @@
       <%= sort_link(@q, :mediumRating, 'medium-Rating', default_order: :desc) %>
       <%= sort_link(@q, :numberRatings, 'number-Ratings', default_order: :desc) %>
     </div>
-      <%= search_form_for @q, url: search_path, method: 'get', class: "form-inline" do |f| %>
+    <%= search_form_for @q, url: search_path, method: 'get', class: "form-inline" do |f| %>
 
       <div class="row">
         <div class="form-group mb-2 ml-1">
@@ -22,12 +22,12 @@
           <%= f.search_field :mediumRating_eq, class: "form-control", placeholder: "4.0" %>
         </div>
         <div class="form-group mb-2 ml-1">
-          <%= f.select :service_name_eq, options_for_select([   ['Select', ''],
-                                                                ['amusement park', 'amusement park'],
-                                                                ['restaurant', 'restaurant'],
-                                                                ['resort', 'resort'],
-                                                                ['shop', 'shop'],
-                                                                ['shopping mall', 'shopping mall']
+          <%= f.select :service_name_eq, options_for_select([['Select', ''],
+                                                             ['amusement park', 'amusement park'],
+                                                             ['restaurant', 'restaurant'],
+                                                             ['resort', 'resort'],
+                                                             ['shop', 'shop'],
+                                                             ['shopping mall', 'shopping mall']
                                                             ]), {}, {class: "form-control"} %>
         </div>
         <%= f.submit class: "btn btn-primary mb-2" %>
@@ -63,20 +63,27 @@
           <td><%= place.mediumRating %></td>
           <td><%= place.phoneNumber %></td>
           <td class="des-search"><%= place.address %></td>
-          <td>
-            <% status = -1 %>
-            <% if place.reviews.each do |review| %>
-              <% if review.user == current_user %>
-                <% status = review.id %>
+          <% if current_user.role == 'Reviewer' %>
+            <td>
+              <% status = -1 %>
+              <% if place.reviews.each do |review| %>
+                <% if review.user == current_user %>
+                  <% status = review.id %>
+                <% end %>
               <% end %>
-            <% end %>
-            <% end %>
-            <% if status != -1 %>
-              <%= link_to 'edit your review', edit_review_path(status) %>
-            <% else %>
-              <%= link_to 'make your review', place_path(place) %>
-            <% end %>
-          </td>
+              <% end %>
+              <% if status != -1 %>
+                <%= link_to 'edit your review', edit_review_path(status) %>
+              <% else %>
+                <%= link_to 'make your review', place_path(place) %>
+              <% end %>
+            </td>
+          <% else %>
+            <td>
+              <%= link_to 'show more', place_path(place), id: "show-more-search" %>
+            </td>
+
+          <% end %>
         </tr>
         <% i += 1 %>
       <% end %>
