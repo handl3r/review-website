@@ -5,9 +5,9 @@ class StaticPagesController < ApplicationController
   def about
   end
   def search
-
+    @q = Place.ransack(params[:q])
+    @places = @q.result.includes(:service)
   end
-
   def self.get_newest_list_review
     list_data = []
     length_list = 0

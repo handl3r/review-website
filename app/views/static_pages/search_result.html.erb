@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-md-6">
+    <%= search_form_for @q, url: search_result_path, html: { method: :get } do |f|%>
+      <%= f.label :name %>
+      <%= f.search_field :name %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Service</th>
+        <th scope="col">NumberRatings</th>
+        <th scope="col">Medium-Rating</th>
+        <th scope="col">PhoneNumber</th>
+        <th scope="col">Description</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% i = 0 %>
+      <% @place.each do |place| %>
+        <tr>
+          <th scope="row"><%= i %></th>
+          <td><%= place.name %></td>
+          <td><%= place.service.name %></td>
+          <td><%= place.numberRatings %></td>
+          <td><%= place.mediumRating %></td>
+          <td><%= place.phoneNumber %></td>
+          <td class="des-search"><%= place.description %></td>
+        </tr>
+        <% i += 1 %>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

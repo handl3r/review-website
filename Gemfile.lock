@@ -368,6 +368,7 @@ DEPENDENCIES
   puma (~> 3.11)
   pundit
   rails (~> 5.2.3)
+  ransack
   rspec-rails
   rspec_junit_formatter
   rubocop

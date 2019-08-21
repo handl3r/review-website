@@ -1,2 +1,79 @@
-<h1>StaticPages#search</h1>
-<p>Find me in app/views/static_pages/search.html.erb</p>
+<div class="row">
+  <div class="col-md-10 offset-md-1 ">
+    <%= search_form_for @q, url: search_path, method: 'get', class: "form-inline" do |f| %>
+      <div class="row">
+        <div class="form-group mb-2 ml-1">
+          <%= f.search_field :name_cont, class: "form-control", placeholder: "name" %>
+        </div>
+        <div class="form-group mb-2 ml-1">
+          <%= f.search_field :address_cont, class: "form-control", placeholder: "address" %>
+        </div>
+        <div class="form-group mb-2 ml-1">
+          <%= f.search_field :phoneNumber_cont, class: "form-control", placeholder: "phoneNumber" %>
+        </div>
+        <div class="form-group mb-2 ml-1">
+          <%= f.search_field :mediumRating_eq, class: "form-control", placeholder: "4.0" %>
+        </div>
+        <div class="form-group mb-2 ml-1">
+          <%= f.select :service_name_eq, options_for_select([   ['Select', ''],
+                                                                ['amusement park', 'amusement park'],
+                                                                ['restaurant', 'restaurant'],
+                                                                ['resort', 'resort'],
+                                                                ['shop', 'shop'],
+                                                                ['shopping mall', 'shopping mall']
+                                                            ]), {}, {class: "form-control"} %>
+        </div>
+        <%= f.submit class: "btn btn-primary mb-2" %>
+      </div>
+
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Service</th>
+        <th scope="col">NumberRatings</th>
+        <th scope="col">Medium-Rating</th>
+        <th scope="col">PhoneNumber</th>
+        <th scope="col">Address</th>
+        <th scope="col">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% i = 0 %>
+      <% @places.each do |place| %>
+        <tr>
+          <th scope="row"><%= i %></th>
+          <td><%= place.name %></td>
+          <td><%= place.service.name %></td>
+          <td><%= place.numberRatings %></td>
+          <td><%= place.mediumRating %></td>
+          <td><%= place.phoneNumber %></td>
+          <td class="des-search"><%= place.address %></td>
+          <td>
+            <% status = -1 %>
+            <% if place.reviews.each do |review| %>
+              <% if review.user == current_user %>
+                <% status = review.id %>
+              <% end %>
+            <% end %>
+            <% end %>
+            <% if status != -1 %>
+              <%= link_to 'edit your review', edit_review_path(status) %>
+            <% else %>
+              <%= link_to 'make your review', place_path(place) %>
+            <% end %>
+          </td>
+        </tr>
+        <% i += 1 %>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
