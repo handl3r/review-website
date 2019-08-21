@@ -1,3 +1,17 @@
 .des-search {
   word-break: break-all;
 }
+// css for search
+.sort_by {
+  margin-bottom: 20px;
+  span {
+    font-weight: bold;
+  }
+  a {
+    margin-left: 10px;
+    text-decoration: underline;
+  }
+  a:hover {
+    color: red;
+  }
+}
