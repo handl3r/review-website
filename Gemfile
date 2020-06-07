@@ -12,6 +12,9 @@ gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 gem 'devise'
 # Devise_zxcvbn for password policy
 gem 'devise_zxcvbn'
+# Devise_Sec for standard security demands
+#gem 'devise_security_extension'
+gem 'devise_security_extension', git: 'https://github.com/phatworx/devise_security_extension.git'
 # Ransack for search
 gem 'ransack'
 # Use game faker for seed data
