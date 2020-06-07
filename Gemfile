@@ -10,6 +10,8 @@ gem 'rails', '~> 5.2.3'
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Devise for authenticate
 gem 'devise'
+# Devise_zxcvbn for password policy
+gem 'devise_zxcvbn'
 # Ransack for search
 gem 'ransack'
 # Use game faker for seed data

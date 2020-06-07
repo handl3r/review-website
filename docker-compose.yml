@@ -7,6 +7,7 @@ services:
     tty: true
     volumes:
       - .:/my_app
+      - bundler_gems_project1_rails:/usr/local/bundle
     ports:
       - "3000:3000"
     environment:
@@ -25,5 +26,7 @@ services:
 
 volumes:
   mysql:
+    driver: local
+  bundler_gems_project1_rails:
     driver: local
 

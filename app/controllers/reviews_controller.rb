@@ -15,7 +15,8 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
-    @review = Review.new
+    # @review = Review.new
+    redirect_to search_path
   end
 
   # GET /reviews/1/edit
