@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :zxcvbnable
   devise :lockable, :password_expirable, :password_archivable, :expirable
+  devise :timeoutable, :timeout_in => 30.minutes
 
   enum role: { Company: 1, Reviewer: 2 }
   validates :role, presence: true
