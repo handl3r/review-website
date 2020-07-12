@@ -1,5 +1,10 @@
 # Requirements:
 * docker, docker-compose
+# Tech:
+* Ruby:2.6.3
+* Rails:5
+* Docker, docker-compose
+* CircleCI
 # Instructions:
 * /# docker-compose build
 * /# docker-compose up (If don't want to see log, add -d)
