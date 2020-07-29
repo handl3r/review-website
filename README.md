@@ -5,6 +5,7 @@
 * Rails:5
 * Docker, docker-compose
 * CircleCI
+* Server AWS
 # Instructions:
 * /# docker-compose build
 * /# docker-compose up (If don't want to see log, add -d)
